@@ -1,0 +1,30 @@
+<div class="row">
+	<div class="col-md-1">
+		<%= link_to "Home", "/home" %>
+	</div>
+	<div class="col-md-10">.col-md-3 </div>
+	<div class="col-md-1">
+		<a href="/users/sign_out" data-method="delete">
+                <button type="button" class="btn btn-danger btn-sm"> Log Out</button>
+            </a>
+            <i class="fa fa-sign-out"></i>
+	</div>
+</div>
+<div class="row">
+	<div class="col-md-2">
+		Good Afternoon <%= current_user.first_name %>! <br> 
+		<i class="fa fa-users"></i><%= link_to "Find New Training Partners" , "/findpartners" %> <br>
+		<i class="fa fa-calendar"></i><%= link_to "Invites / Workout Schedule" %> <br>
+		<span class="glyphicon glyphicon-envelope"></span> <%= link_to "Workouts Buds" %> 
+	</div>
+	<div class="col-md-8">
+	</div>
+	<div class="col-md-2">
+		<a href="#"></a>
+	</div>
+</div>
+
+
+<!-- This Page Should lead to looking for other users around the area (10 miles max.) -->
+<!-- Once a workout session has been scheduled it should be marked on the calender. -->
+<!-- People should be able to add each other as contacts. Be allowed to Message each other etc.. -->

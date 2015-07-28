@@ -1,0 +1,56 @@
+<!-- Home Page. Displays Important Content. Importantance of the Site (What it does) -->
+<div class="row header">
+    <div class="col-md-1">Workout Buddy</div>
+    <div class="col-md-6">Connecting workout junkies together.</div>
+    <div class="col-md-1">
+        <%= link_to "Profile", "/profile" %>
+    </div>
+    <div class="col-md-2">
+    <i class="fa fa-search"></i>
+        <%= link_to "Find me a Spotter!", "/findpartners" %>
+    </div>
+    <% if !current_user.present? %>
+    <div class="col-md-1">
+    <i class="fa fa-sign-in"></i>
+          <a href="/users/sign_in">
+            <button type="button" class="btn btn-primary btn-sm"> Log in</button>
+          </a>
+    </div>
+    <div class="col-md-1">
+        <a href="/users/sign_up">Not a member?</a>
+    </div>
+    <% else %>
+        <div class="col-md-2">
+             <a href="/users/sign_out" data-method="delete">
+                <button type="button" class="btn btn-danger btn-sm"> Log Out</button>
+            </a>
+            <i class="fa fa-sign-out"></i>
+        </div>
+        <% end %>
+</div> <!-- end of row -->
+    
+    <div class="jumbotron">
+      <center><h1>Changing the way we meet people <br> while achieving our fitness goals.</h1><center>
+      <br>
+      <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
+    </div>
+
+<div class="row">
+    <center><h3>Perks of pair working out: </h3></center> <br>
+        <ul>
+            <center>
+                You'll be more motivated. Find out what drives other people.<br>
+                You will workout out harder. Period.<br>
+                Having a spotter all the time, no more forced reps.<br>
+                Make Connections. Grow your network. Life is all about who you know.
+            </center>
+        </ul>
+</div>
+
+
+<br>
+<div class="row">
+<center>About Us.</center> <br>
+
+<center>Art party letterpress post-ironic, lomo drinking vinegar American Apparel retro heirloom Wes Anderson trust fund XOXO. Mustache kale chips Truffaut, heirloom raw denim Carles lo-fi normcore swag. Viral craft beer narwhal vinyl, heirloom asymmetrical polaroid slow-carb irony 90's. Locavore lumbersexual narwhal, Austin flannel post-ironic chia tattooed crucifix put a bird on it raw denim Pinterest. Beard flexitarian asymmetrical cliche, health goth wayfarers cray you probably haven't heard of them cornhole lo-fi pug retro. Small batch cred Thundercats authentic next level. Gluten-free jean shorts sriracha street art heirloom.</center>
+</div>
