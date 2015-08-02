@@ -1,18 +1,78 @@
 <div class="row">
-    <div class="col-md-1">
-        <%= link_to "Home", "/home" %>
-    </div>
-    <div class="col-md-10">.col-md-3 </div>
-    <div class="col-md-1">
-        <a href="/users/sign_out" data-method="delete">
-                <button type="button" class="btn btn-danger btn-sm"> Log Out</button>
+    <div class="col-md-12">
+    <h4>Users near: <%= current_user.city %>, <%= current_user.state %></h4>
+    Users should have a modal to click on! 
+        <ul>
+        <% @users.each do |u| %>
+       <li class="user"> 
+            <a href="" data-id="<%= u.id %>">
+                <%= u.first_name %> <%= u.last_name %> 
             </a>
-            <i class="fa fa-sign-out"></i>
+        </li>
+        <% end %> 
+        </ul>
     </div>
-</div>I should add a geolocation model here that will search for nearest users within 10 mile radius...
+</div>
 
-clicking on users should bring out modals with information like age/education/hobbies/gyms or activities currently enrolled in / profile pic / strength and weaknesses / current fitness goal. <br>
+<!-- I should add a geolocation model here that will search for nearest users within 10 mile radius... -->
 
- <%= @location %>
- <br>
- <%= @ip %>
+<!-- clicking on users should bring out modals with information like age/education/hobbies/gyms or activities currently enrolled in / profile pic / strength and weaknesses / current fitness goal. <br>
+ -->
+
+ <div class="modal fade" id="modal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h3 class="modal-title">Modal title</h3>
+        <img class="photo" src="">
+        <h4 class="modal-age">Modal Age</h4>
+        <h5 class="height"></h5>
+        <h5 class="weight"></h5>
+        <h6>
+            <button type="button" class="btn btn-danger btn-xs">Message</button>
+            <button type="button" class="btn btn-info btn-xs">Friend Request</button>
+        </h6>
+      </div>
+      <div class="col-md-6">
+      <div class="modal-body">
+          Education
+            <ul>
+                <li class="education"></li>
+            </ul>
+            Fitness Goals
+            <ul>
+                <li class="goals"></li>
+            </ul>
+            Strengths
+            <ul>
+                <li class="strengths"></li>
+            </ul>
+            Weaknesses
+            <ul>
+                <li class="weaknesses"></li>
+            </ul>
+      </div>
+      </div>
+      <div class="col-md-6">
+      <div class="modal-body">
+          Gym Memberships
+            <ul>
+                <li class="memberships"></li>
+            </ul>
+            Personal Equipment
+            <ul>
+                <li class="equipment"></li>
+            </ul>
+            Activities
+              <ul>
+                <li class="activity"></li>
+            </ul>
+      </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

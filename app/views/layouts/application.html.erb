@@ -2,11 +2,59 @@
 <html>
 <head>
   <title>RandomProject</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+<div class="row">
+
+	<div class="col-md-2">
+		<ul class="list-group-item">
+			<a href="/home"><i class="fa fa-home fa-fw fa-lg"></i>&nbsp; Home</a>
+		</ul>
+	</div>
+
+	<div class="col-md-2">
+		<ul class="list-group-item">
+			<a href="/profile"><i class="fa fa-user fa-fw fa-lg"></i>&nbsp; Profile</a>
+		</ul>
+	</div>
+
+<div class="col-md-2">
+		<ul class="list-group-item">
+			<a href="/profile"><i class="fa fa-circle-o-notch fa-fw fa-lg"></i>&nbsp; Do a Barrel Roll</a>
+		</ul>
+	</div>
+
+
+	<div class="col-md-2"> 
+		<ul class="list-group-item">
+			<a href="/information/new"><i class="fa fa-bars fa-lg fa-fw"></i>&nbsp; Settings</a>
+		</ul>
+	</div>
+
+	<div class="col-md-2"> 
+		<ul class="list-group-item">
+			<a href="/mailbox/inbox"><i class="fa fa-envelope fa-lg fa-fw"></i>&nbsp; Messages</a>
+		</ul>
+	</div>
+
+	<% if !current_user.present? %>
+    <div class="col-md-2">
+		<ul class="list-group-item">
+			<a href="/users/sign_in"><i class="fa fa-sign-in fa-fw fa-lg"></i>&nbsp; Login </a>
+		</ul>
+	</div>
+    <% else %>
+        <div class="col-md-2">
+		<ul class="list-group-item">
+			<a href="/users/sign_out" data-method="delete"><i class="fa fa-sign-out fa-fw fa-lg"></i>&nbsp; Signout </a>
+		</ul>
+	</div>
+        <% end %>
+
+</div>
 <%= yield %>
 
 </body>

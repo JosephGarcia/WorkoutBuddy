@@ -1,63 +1,33 @@
 //jQuery is required to run this code
-$( document ).ready(function() {
+$( document ).ready(function(){
+    function fetchUserInfo(event){
+	event.preventDefault();
+	var userID = $(event.target).data('id')
+	var request = $.get('/show/users/' + userID);
 
-    scaleVideoContainer();
+	function handleModal(response) {
+		$('.modal').modal();
+		$('.modal-title').text([response.first_name + " " +response.last_name]);
+		$('.modal-age').text("Age: " + response.age)
+		$('.height').text("Height: " + response.information.height + " ft")
+		$('.weight').text("Weight: " + response.information.weight + " lbs")
+		$('.education').text(response.information.education)
+		$('.goals').text(response.information.goals)
+		$('.strengths').text(response.information.strengths)
+		$('.weaknesses').text(response.information.weaknesses)
+		$('.activity').text(response.information.activities)
+		$('.memberships').text(response.information.memberships)
+		$('.equipment').text(response.information.equipment)
+		$('.photo').attr('src', (response.user_image_url))
+	}
 
-    initBannerVideoSize('.video-container .poster img');
-    initBannerVideoSize('.video-container .filter');
-    initBannerVideoSize('.video-container video');
+		function handleError (err1, err2, err3) {
+    		console.error('OH NO!!', err1, err2, err3);
+  		}
 
-    $(window).on('resize', function() {
-        scaleVideoContainer();
-        scaleBannerVideoSize('.video-container .poster img');
-        scaleBannerVideoSize('.video-container .filter');
-        scaleBannerVideoSize('.video-container video');
-    });
-
+ 		request.done(handleModal);
+ 		request.fail(handleError);
+}
+$('.user').on('click', fetchUserInfo);  
+  
 });
-
-function scaleVideoContainer() {
-
-    var height = $(window).height() + 5;
-    var unitHeight = parseInt(height) + 'px';
-    $('.homepage-hero-module').css('height',unitHeight);
-
-}
-
-function initBannerVideoSize(element){
-
-    $(element).each(function(){
-        $(this).data('height', $(this).height());
-        $(this).data('width', $(this).width());
-    });
-
-    scaleBannerVideoSize(element);
-
-}
-
-function scaleBannerVideoSize(element){
-
-    var windowWidth = $(window).width(),
-    windowHeight = $(window).height() + 5,
-    videoWidth,
-    videoHeight;
-
-    console.log(windowHeight);
-
-    $(element).each(function(){
-        var videoAspectRatio = $(this).data('height')/$(this).data('width');
-
-        $(this).width(windowWidth);
-
-        if(windowWidth < 1000){
-            videoHeight = windowHeight;
-            videoWidth = videoHeight / videoAspectRatio;
-            $(this).css({'margin-top' : 0, 'margin-left' : -(videoWidth - windowWidth) / 2 + 'px'});
-
-            $(this).width(videoWidth).height(videoHeight);
-        }
-
-        $('.homepage-hero-module .video-container video').addClass('fadeIn animated');
-
-    });
-}

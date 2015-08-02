@@ -5,6 +5,6 @@ class SiteController < ApplicationController
 	end
 
 	def profile
-
+		
 	end
 end

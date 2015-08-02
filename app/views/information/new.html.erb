@@ -1,0 +1,49 @@
+<%= form_for [@information] do |i| %>
+  
+  <div class="field">
+    <%= i.label :height, "Height (in Feet)" %><br />
+    <%= i.number_field :height, :placeholder => "5'10" , autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= i.label :weight  %><br />
+    <%= i.number_field :weight, :placeholder => "145" , autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= i.label :education  %><br />
+    <%= i.text_field :education, :placeholder => "Florida State" , autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= i.label :strengths, "Tell us about your strengths when it comes to exercise"  %><br />
+    <%= i.text_field :strengths, :placeholder => "Running long distances" , autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= i.label :weaknesses, "Tell us about your weaknesses when it comes to exercise" %><br />
+    <%= i.text_field :weaknesses, :placeholder => "Getting tired quickly" , autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= i.label :goals  %><br />
+    <%= i.text_field :goals, :placeholder => "Gaining Mass / Losing Weight" , autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= i.label :equipment, "Do you own any personal equipment?" %><br />
+    <%= i.text_field :equipment, :placeholder => "Jumprope/ Training Mask" , autofocus: true %>
+  </div>
+
+   <div class="field">
+    <%= i.label :memberships, "Current Gym Memberships?" %><br />
+    <%= i.text_field :memberships, :placeholder => "L.A Fitness" , autofocus: true %>
+  </div>
+
+   <div class="field">
+    <%= i.label :activities, "Any recreational activies outside of the gym?"  %><br />
+    <%= i.text_field :activities, :placeholder => "Jiu-Jitsu / Basketball" , autofocus: true %>
+  </div>
+
+  <%= i.submit %>
+<% end %>
