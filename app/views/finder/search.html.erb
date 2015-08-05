@@ -1,17 +1,41 @@
 <div class="row">
-    <div class="col-md-12">
-    <h4>Users near: <%= current_user.city %>, <%= current_user.state %></h4>
-    Users should have a modal to click on! 
-        <ul>
-        <% @users.each do |u| %>
-       <li class="user"> 
-            <a href="" data-id="<%= u.id %>">
-                <%= u.first_name %> <%= u.last_name %> 
+        <div class="jumbotron teamwork">
+          <h1 class="text-center jumboheader">"Alone we can do so little, <br>together we can do so much."</h1>
+      </div>
+      <div class="col-md-12 text-center users">
+    <h4 class="text-left page-header text-center">Users in: <%= current_user.city %>, <%= current_user.state %></h4>
+      <div class="col-md-6">
+        <ul> 
+        <% @users.each do |u| %> 
+            <a href="" class="user" data-id="<%= u.id %>">
+               <strong> <%= u.first_name %> <%= u.last_name %> </strong> <br>
             </a>
-        </li>
         <% end %> 
         </ul>
+      </div>
+      <div class="col-md-6">
+       POSTS! <br>
+       <% @posts.each do |p| %>
+          <a href="/posts/<%=p.id%>">
+         <strong> <%= p.title %> </strong></a><br>
+       <% end %>
+      </div>
     </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12 text-center gyms">
+     <h4 class="text-left page-header text-center">Gyms near: <%= current_user.city %>, <%= current_user.state %> </h4>
+     <ul>
+        <% @client.spots(current_user.lat, current_user.lng, :types => 'gym', :radius => 8000, 
+        :exclude => ['lodging', 'hospital']).each do |gym| %>
+        <div class="col-md-4">
+          <strong><a href="<%=gym.url %>"><%= gym.name %></a> </strong> 
+          <br>- <%= gym.vicinity %> <br> <br>
+        </div>
+        <% end %>
+     </ul>
+     </div>
 </div>
 
 <!-- I should add a geolocation model here that will search for nearest users within 10 mile radius... -->
@@ -27,11 +51,14 @@
         <h3 class="modal-title">Modal title</h3>
         <img class="photo" src="">
         <h4 class="modal-age">Modal Age</h4>
+        <h4 class="followers">caca</h4>
         <h5 class="height"></h5>
         <h5 class="weight"></h5>
         <h6>
-            <button type="button" class="btn btn-danger btn-xs">Message</button>
-            <button type="button" class="btn btn-info btn-xs">Friend Request</button>
+          <a href="/conversations/new">
+            <button type="button" class="btn btn-primary btn-xs">Message</button>
+          </a>
+          <span class="follow"> </span>
         </h6>
       </div>
       <div class="col-md-6">

@@ -1,17 +1,73 @@
 <div class="row">
-	<div class="col-md-5">
-		Good Afternoon <%= current_user.first_name %>! <br> 
-		<i class="fa fa-users"></i><%= link_to "Find New Training Partners" , "/findpartners" %> <br>
-		<i class="fa fa-calendar"></i><%= link_to "Invites / Workout Schedule" %> <br>
-		<span class="glyphicon glyphicon-envelope"></span> <%= link_to "Workouts Buds" %> 
+	<div class="greeting text-center"> 
+		<h2><strong>Good Afternoon <%= current_user.first_name %>!</strong></h2><br> 
 	</div>
-	<div class="col-md-8">
-	</div>
-	<div class="col-md-2">
-		<a href="#"></a>
+	<div class="jumbotron profilejumbo">
+		<div class="col-md-4 menu">
+		<ul class="list-group-item">
+			<i class="fa fa-comments fa-fw"></i><%= link_to "Messages", "mailbox/inbox" %> 
+			<span class="label label-danger pull-right"><%=unread_messages_count%></span> <br>
+		</ul>
+		<ul class="list-group-item">
+			<i class="fa fa-user-plus fa-fw"></i><%= link_to "Find New Training Partners" , "/findpartners" %> <br> 
+		</ul>
+		<ul class="list-group-item">
+			<i class="fa fa-envelope fa-fw"></i><%= link_to "Workout Requests" %> <br>
+		</ul>
+		<ul class="list-group-item">
+			<i class="fa fa-users fa-fw"></i> <%= link_to "Followers" %> <br>
+		</ul>
+		<ul class="list-group-item">
+			<i class="fa fa-user fa-lg fa-fw"></i> <%= link_to "About You", "/information/new" %>
+		</ul>
+		<ul class="list-group-item">
+			<i class="fa fa-bars fa-lg fa-fw"></i> <%= link_to "User Settings", "/users/edit" %>
+		</ul>
+		</div>
 	</div>
 </div>
 
+<div class="row">
+	<div class="col-md-4">
+		<div class="jumbotron workouts">
+			<p class="text-center">Workouts</p>
+				<center>
+					Arms<br>
+					Legs<br>
+					Abs<br>
+					Chest<br>
+					Shoulders<br>
+					Back
+				</center>
+		</div>
+	</div>
+	<div class="col-md-4">
+		<div class="jumbotron supps">
+			<p class="text-center">Supplements</p>
+				<center>
+					Weight-Gainers<br>
+					Creatine<br>
+					Fat-Burners<br>
+					Pre-Workout<br>
+					Post-Recovery<br>
+					Vitamins
+				</center>
+		</div>
+	</div>
+	<div class="col-md-4">
+		<div class="jumbotron recreational">
+			<p class="text-center">Recreational</p>
+				<center>
+					MMA<br>
+					Yoga<br>
+					Basketball<br>
+					Crossfit<br>
+					Pro Weightlifting<br>
+					Swimming<br>
+				</center>
+		</div>
+	</div>
+</div>
 
 <!-- This Page Should lead to looking for other users around the area (10 miles max.) -->
 <!-- Once a workout session has been scheduled it should be marked on the calender. -->

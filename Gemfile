@@ -27,9 +27,12 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'paperclip'
 gem 'mailboxer', github: 'lacco/mailboxer'
 gem 'geocoder'
+gem 'google_places'
 gem 'devise'
 gem 'font-awesome-rails'
 gem 'geokit-rails'
+gem "acts_as_follower"
+gem 'acts_as_commentable_with_threading'
 gem 'rails_12factor' , group: :production
 # Use Unicorn as the app server
 # gem 'unicorn'

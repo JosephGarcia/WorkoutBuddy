@@ -1,0 +1,6 @@
+<%= @article.title %> <br>
+
+
+<% @comments.each do |c| %>
+<%= c.user_id %>: <%= c.body %>
+<% end %>

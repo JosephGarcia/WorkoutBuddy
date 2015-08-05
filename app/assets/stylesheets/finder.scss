@@ -1,3 +1,35 @@
 // Place all the styles related to the finder controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.teamwork {
+background-image: url("https://8lsmuaythaiplymouth.files.wordpress.com/2014/08/10621736_1453618894904116_1645085331_o.jpg");
+background-size: cover;
+height: 550px;
+opacity: 1;
+}
+
+.teamwork .jumboheader {
+	color: darkgrey;
+	margin-top: 90px;
+}
+
+.users {
+	background-color: rgba(0,0,20,1);
+	margin-top: -30px;
+	color: darkgrey;
+}
+
+.users a {
+	color: white;
+}
+
+.gyms {
+	background-color: rgba(0,0,20,1);
+	color: darkgrey;
+}
+
+.gyms a {
+	color:white;
+}

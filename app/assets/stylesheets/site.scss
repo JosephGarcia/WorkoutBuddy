@@ -2,48 +2,108 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.homepage-hero-module {
-    border-right: none;
-    border-left: none;
-    position: relative;
-}
-.no-video .video-container video,
-.touch .video-container video {
-    display: none;
-}
-.no-video .video-container .poster,
-.touch .video-container .poster {
-    display: block !important;
-}
-.video-container {
-    position: relative;
-    bottom: 0%;
-    left: 0%;
-    height: 100%;
-    width: 100%;
-    overflow: hidden;
-    background: #000;
-}
-.video-container .poster img {
-    width: 100%;
-    bottom: 0;
-    position: absolute;
-}
-.video-container .filter {
-    z-index: 100;
-    position: absolute;
-    background: rgba(0, 0, 0, 0.4);
-    width: 100%;
-}
-.video-container video {
-    position: absolute;
-    z-index: 0;
-    bottom: 0;
-}
-.video-container video.fillWidth {
-    width: 100%;
+.cover {
+color: white;
+background-image: url("http://1.bp.blogspot.com/-h5OqQcl30bk/UbSVf1ydVbI/AAAAAAAAUgE/noSAawBBcBk/s1600/Free-Toronto-Gym-05.jpg");
+background-size: cover;
+opacity: 1;
+height: 500px;
 }
 
 .header {
-    color: p
+    background-color: darkgrey;
+    border-style: solid;
+    }
+.icons a  {
+	color:white;
+	padding-right: 15px;
+	border-right: 1px solid;
+}
+
+.poop {
+	background-color: rgba(0,0,10,0.7);
+}
+
+.header-end {
+	background-color: rgba(0,0,10,0.7);
+}
+
+.header-end a {
+	color: white;
+}
+
+
+.icons a:last-child {
+	border: none;
+}
+
+.profilejumbo {
+color: black;
+background-image: url("https://stepintomyshoes.files.wordpress.com/2010/10/ropeceps.jpg");
+background-size: cover;
+height: 500px;
+}
+
+.greeting {
+	color: white;
+	background-color: rgba(0,0,15,1);
+	padding-top: 10px;
+}
+
+.workouts {
+	color: white;
+	background-image: url("http://d2ufjv2mjmrw7m.cloudfront.net/sites/default/files/styles/large/public/-NicoleBedardPhotography20110319_MG_2248.jpg");
+	background-size: cover;
+	margin-left: 20px;
+}
+
+.supps {
+	color: white;
+	background-image: url("http://www.bryankrahn.com/wp-content/uploads/2014/06/sports-nutrition-supplements.jpg");
+	background-size: cover;
+}
+.about-text{
+	color:white	
+}
+
+.strong {
+	color:white;
+}
+
+.recreational {
+	color: white;
+	background-image: url("http://www.greenbrideguide.com/sites/default/files/outdoor_yoga_chakrabodyyoga_blogspot_com_.jpg");
+	background-size: cover;
+	margin-right: 20px;
+}
+
+
+.content {
+	color: white;
+	background-color: rgba(0,0,15,0.9);
+	margin-top: -30px;
+}
+
+.about {
+	background-color: rgba(0,0,15,0.9);
+	margin-top: -20px;
+	padding-bottom: 70px;
+}
+
+.menu {
+	margin-left: 20px;
+}
+
+.menu .list-group-item {
+	background-color: rgba(0,0,10,0.75);
+	border-color: rgba(50,50,50,1);
+}
+
+.menu a {
+	color: white;
+	margin-left: 8px;
+}
+
+.menu i {
+	color: white;
 }

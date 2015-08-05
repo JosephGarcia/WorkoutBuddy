@@ -1,26 +1,30 @@
 <!-- Home Page. Displays Important Content. Importantance of the Site (What it does) -->
-    <div class="jumbotron">
+    <div class="jumbotron cover">
       <center><h1>Changing the way we meet people <br> while achieving our fitness goals.</h1><center>
       <br>
-      <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
+      <% if !current_user.present? %>
+        <p><a class="btn btn-primary btn-lg" href="/users/sign_up" role="button">Sign Up!</a></p>
+      <% end %>
     </div>
 
-<div class="row">
-    <center><h3>Perks of pair working out: </h3></center> <br>
+<div class="row content">
+    <center><h2><strong>Perks of pair working out:</strong></h3></center> <br>
         <ul>
-            <center>
+            <center><strong>
                 You'll be more motivated. Find out what drives other people.<br>
                 You will workout out harder. Period.<br>
                 Having a spotter all the time, no more forced reps.<br>
                 Make Connections. Grow your network. Life is all about who you know.
-            </center>
+            </strong></center>
         </ul>
 </div>
 
 
 <br>
-<div class="row">
-<center>About Us.</center> <br>
+<div class="row about">
+  <div class="col-md-12">
+    <h2 class="text-center about-text">About Us.</h2> <br>
 
-<center>Art party letterpress post-ironic, lomo drinking vinegar American Apparel retro heirloom Wes Anderson trust fund XOXO. Mustache kale chips Truffaut, heirloom raw denim Carles lo-fi normcore swag. Viral craft beer narwhal vinyl, heirloom asymmetrical polaroid slow-carb irony 90's. Locavore lumbersexual narwhal, Austin flannel post-ironic chia tattooed crucifix put a bird on it raw denim Pinterest. Beard flexitarian asymmetrical cliche, health goth wayfarers cray you probably haven't heard of them cornhole lo-fi pug retro. Small batch cred Thundercats authentic next level. Gluten-free jean shorts sriracha street art heirloom.</center>
+<center class="strong">Art party letterpress post-ironic, lomo drinking vinegar American Apparel retro heirloom Wes Anderson trust fund XOXO. Mustache kale chips Truffaut, heirloom raw denim Carles lo-fi normcore swag. Viral craft beer narwhal vinyl, heirloom asymmetrical polaroid slow-carb irony 90's. Locavore lumbersexual narwhal, Austin flannel post-ironic chia tattooed crucifix put a bird on it raw denim Pinterest. Beard flexitarian asymmetrical cliche, health goth wayfarers cray you probably haven't heard of them cornhole lo-fi pug retro. Small batch cred Thundercats authentic next level. Gluten-free jean shorts sriracha street art heirloom.</center>
+  </div>
 </div>

@@ -1,7 +1,7 @@
 <div class="media">
   <div class="media-left">
     <a href="#">
-      <img class="media-object" src="http://placehold.it/64x64" alt="...">
+      <img class="media-object" src="<%= conversation.originator.avatar %>" height="80px" width='64px'>
     </a>
   </div>
   <div class="media-body">
@@ -14,3 +14,5 @@
     <%= link_to "View", conversation_path(conversation)  %>
   </div>
 </div>
+
+<!-- ADD USERS IMAGE TO MESSAGES -->

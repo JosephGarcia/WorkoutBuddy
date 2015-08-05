@@ -2,47 +2,47 @@
   
   <div class="field">
     <%= i.label :height, "Height (in Feet)" %><br />
-    <%= i.number_field :height, :placeholder => "5'10" , autofocus: true %>
+    <%= i.select :height, options_for_select(["6'1", "6'2", "6'3", "6'4"], "6'1") %>
   </div>
 
   <div class="field">
     <%= i.label :weight  %><br />
-    <%= i.number_field :weight, :placeholder => "145" , autofocus: true %>
+    <%= i.select :weight, options_for_select((125...260), 150) %>
   </div>
 
   <div class="field">
     <%= i.label :education  %><br />
-    <%= i.text_field :education, :placeholder => "Florida State" , autofocus: true %>
+    <%= i.select :education, options_for_select(["Florida State","University of Florida","University of Miami","University Of Central Florida","University Of South Florida","Barry University", "Bootcamps > College"], "University of Miami")  %>
   </div>
 
   <div class="field">
     <%= i.label :strengths, "Tell us about your strengths when it comes to exercise"  %><br />
-    <%= i.text_field :strengths, :placeholder => "Running long distances" , autofocus: true %>
+    <%= i.select :strengths, options_for_select(["Lifting Heavy Weights", "Fast Runner", "Running Long Distance", "Great Cardio"], "" ) %>
   </div>
 
   <div class="field">
     <%= i.label :weaknesses, "Tell us about your weaknesses when it comes to exercise" %><br />
-    <%= i.text_field :weaknesses, :placeholder => "Getting tired quickly" , autofocus: true %>
+    <%= i.select :weaknesses, options_for_select(["Getting Tired Easily", "Trouble with Heavy Weights", "Slow Runner"], "")  %>
   </div>
 
   <div class="field">
     <%= i.label :goals  %><br />
-    <%= i.text_field :goals, :placeholder => "Gaining Mass / Losing Weight" , autofocus: true %>
+    <%= i.select :goals, options_for_select(["Gaining Mass", "Lose Weight", "Slow Runner"], "")    %>
   </div>
 
   <div class="field">
     <%= i.label :equipment, "Do you own any personal equipment?" %><br />
-    <%= i.text_field :equipment, :placeholder => "Jumprope/ Training Mask" , autofocus: true %>
+    <%= i.select :equipment, options_for_select(["Weighted Jump Rope", "Traning Mask", "Jump Rope","Weighted Vest", "Dumbbells/Kettlebells"], "") %>
   </div>
 
    <div class="field">
     <%= i.label :memberships, "Current Gym Memberships?" %><br />
-    <%= i.text_field :memberships, :placeholder => "L.A Fitness" , autofocus: true %>
+    <%= i.select :memberships,options_for_select(["LA Fitness", "24 Hour Fitness", "YouFit","Other"], "")%>
   </div>
 
    <div class="field">
-    <%= i.label :activities, "Any recreational activies outside of the gym?"  %><br />
-    <%= i.text_field :activities, :placeholder => "Jiu-Jitsu / Basketball" , autofocus: true %>
+    <%= i.label :activities, "Favorite Recreational Activity?"  %><br />
+    <%= i.select :activities,options_for_select(["Jiu-Jitsu", "Basketball", "Crossfit","Yoga", "Golf"], "") %>
   </div>
 
   <%= i.submit %>

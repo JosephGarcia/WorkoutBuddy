@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   resources(:information)
+  resources(:posts)
   get '/home' => 'site#index'
   get '/profile' => 'site#profile'
   get '/findpartners' => 'finder#search'
@@ -19,4 +20,12 @@ Rails.application.routes.draw do
       post :untrash
     end
   end
+
+
+  resources :finder do
+  member do
+    get :follow
+    get :unfollow
+  end
+end
 end
