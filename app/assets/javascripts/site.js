@@ -10,6 +10,7 @@ $( document ).ready(function(){
 	$('.modal').modal(); 
 	$('.modal-title').text([response.first_name + " " +response.last_name]); 
 	$('.modal-age').text("Age: " + response.age) 
+	console.log(response.information)
 	$('.height').text("Height: " + response.information.height + " ft") 
 	$('.weight').text("Weight: " + response.information.weight + " lbs")
 	$('.education').text(response.information.education)

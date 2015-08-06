@@ -21,7 +21,6 @@ end
 private
 
 def info_params
-		alottaShit = :height, :weight, :education, :strengths, :weaknesses, :goals, :memberships, :equipment, :activities, :photo
-		params.require(:information).permit(alottaShit)
+		params.require(:information).permit(:height, :weight, :education, :strengths, :weaknesses, :goals, :memberships, :equipment, :activities, :photo)
 	end
 end
