@@ -5,11 +5,15 @@
 	<div class="jumbotron profilejumbo">
 		<div class="col-md-4 menu">
 		<ul class="list-group-item">
+			<% if unread_messages_count == 0 %>
 			<i class="fa fa-comments fa-fw"></i><%= link_to "Messages", "mailbox/inbox" %> 
+			<% else %>
+			<i class="fa fa-comments fa-fw"></i><%= link_to "New Messages!", "mailbox/inbox" %> 
 			<span class="label label-danger pull-right"><%=unread_messages_count%></span> <br>
+			<% end %>
 		</ul>
 		<ul class="list-group-item">
-			<i class="fa fa-user-plus fa-fw"></i><%= link_to "Find New Training Partners" , "/findpartners" %> <br> 
+			<i class="fa fa-user-plus fa-fw"></i><%= link_to "Find Training Partners" , "/findpartners" %> <br> 
 		</ul>
 		<ul class="list-group-item">
 			<i class="fa fa-envelope fa-fw"></i><%= link_to "Workout Requests" %> <br>

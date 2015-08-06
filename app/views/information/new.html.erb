@@ -1,14 +1,20 @@
 <%= form_for [@information] do |i| %>
-  
-  <div class="field">
-    <%= i.label :height, "Height (in Feet)" %><br />
-    <%= i.select :height, options_for_select(["6'1", "6'2", "6'3", "6'4"], "6'1") %>
-  </div>
+
+<h1>
+  <strong>
+    Tell us about Yourself!
+  </strong>
+</h1>
 
   <div class="field">
-    <%= i.label :weight  %><br />
-    <%= i.select :weight, options_for_select((125...260), 150) %>
+    <%= i.label :height, "Height (in Feet)" %><br />
+    <%= i.select :height, options_for_select(["5'1", "5'2", "5'3", "5'4", "5'5", "5'6", "5'7", "5'8", "5'9", "5'10", "5'11", "6'0", "6'1", "6'2", "6'3", "6'4"], "6'1") %>
   </div>
+
+    <div class="field">
+      <%= i.label :weight  %><br />
+      <%= i.select :weight, options_for_select((125...260), 150) %>
+    </div>
 
   <div class="field">
     <%= i.label :education  %><br />
@@ -27,12 +33,12 @@
 
   <div class="field">
     <%= i.label :goals  %><br />
-    <%= i.select :goals, options_for_select(["Gaining Mass", "Lose Weight", "Slow Runner"], "")    %>
+    <%= i.select :goals, options_for_select(["Gaining Mass", "Lose Weight", "Be able to run longer then 5 minutes"], "")    %>
   </div>
 
   <div class="field">
     <%= i.label :equipment, "Do you own any personal equipment?" %><br />
-    <%= i.select :equipment, options_for_select(["Weighted Jump Rope", "Traning Mask", "Jump Rope","Weighted Vest", "Dumbbells/Kettlebells"], "") %>
+    <%= i.select :equipment, options_for_select(["Weighted Jump Rope", "Traning Mask", "Jump Rope","Weighted Vest", "Dumbbells/Kettlebells", "Speed Parachute"], "") %>
   </div>
 
    <div class="field">
