@@ -1,0 +1,20 @@
+<h2><strong>
+	<%= @article.title %> <br>
+</strong></h2>
+
+<div class="row">
+	<div class="col-md-5 forum_posts">
+		<% @comments.each do |c| %>
+		<%= c.user_id %>: <%= c.body %>
+		<% end %>
+	</div>
+
+	<div class="col-md-4">
+		<%= form_for @new_comment do |f| %>
+  		<%= f.text_area :body %>
+  		<%= submit_tag "Post comment" %>
+		<% end %>
+	</div>
+</div>
+
+

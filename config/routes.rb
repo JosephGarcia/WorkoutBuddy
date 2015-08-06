@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
+  root :to => 'site#index'
   resources(:information)
   resources(:posts)
+  resources(:forums)
   get '/home' => 'site#index'
   get '/profile' => 'site#profile'
   get '/findpartners' => 'finder#search'

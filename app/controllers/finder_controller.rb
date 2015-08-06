@@ -4,7 +4,6 @@ class FinderController < ApplicationController
 	def search
 		@users = current_user.nearbys(10)
 		@client = GooglePlaces::Client.new("AIzaSyAdvCANrc5AQfhtGpsYbOCW2LKX9lR_VZw")
-		@posts = Article.all.limit(10)
 	end
 
 	def show
