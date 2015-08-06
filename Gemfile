@@ -25,7 +25,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 gem 'paperclip'
-gem 'aws-sdk', '~> 2.0.22'
+gem 'aws-sdk', '< 2.0'
 gem 'mailboxer', github: 'lacco/mailboxer'
 gem 'geocoder'
 gem 'google_places'
