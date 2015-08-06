@@ -2,11 +2,13 @@
 $( document ).ready(function(){
  function fetchUserInfo(event){
 	event.preventDefault();
+	
 	var userID = $(event.target).data('id')
 	var request = $.get('/show/users/' + userID);
 
 	function handleModal(response) { 
-	$('.modal').modal(); $('.modal-title').text([response.first_name + " " +response.last_name]); 
+	$('.modal').modal(); 
+	$('.modal-title').text([response.first_name + " " +response.last_name]); 
 	$('.modal-age').text("Age: " + response.age) 
 	$('.height').text("Height: " + response.information.height + " ft") 
 	$('.weight').text("Weight: " + response.information.weight + " lbs")

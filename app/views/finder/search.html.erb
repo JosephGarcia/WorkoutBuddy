@@ -8,7 +8,7 @@
         <ul> 
         <% @users.each do |u| %> 
             <a href="" class="user" data-id="<%= u.id %>">
-               <strong> <%= u.first_name %> <%= u.last_name %> </strong> <br>
+               <%= u.first_name %> <%= u.last_name %>  <br>
             </a>
         <% end %> 
         </ul>
